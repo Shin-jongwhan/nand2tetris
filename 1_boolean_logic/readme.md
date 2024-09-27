@@ -14,3 +14,8 @@
 ### zip 파일을 다운로드 한 후 tools/HardwareSimulator.bat을 열면 책에 있는 그림처럼 나온다. 
 ### java 기반이기 때문에 java를 설치해야 한다.
 #### ![image](https://github.com/user-attachments/assets/cbd33d31-aeba-4d3b-a7fc-e967d2d78883)
+### <br/><br/><br/>
+
+## 과제
+### nand 게이트를 제외한 15개의 게이트에 대해 구현해야 한다. 
+#### ![image](https://github.com/user-attachments/assets/3a14eb60-36a3-43c2-b6b5-b6d808530278)
