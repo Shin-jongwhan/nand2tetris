@@ -38,6 +38,17 @@
 #### ![image](https://github.com/user-attachments/assets/cda8d5c6-444b-456f-818f-59afb411e113)
 ### <br/><br/><br/>
 
+## 논리 기호
+### 논리 기호는 집합과 연관이 되어 있어 집합으로 표현이 가능하다.
+### 책에서도 논리 기호를 쓰니 알아두면 좋다.
+- 논리합 ∨
+- 논리곱 ∧
+- 부정 ¬
+#### https://ko.wikipedia.org/wiki/%EB%93%9C_%EB%AA%A8%EB%A5%B4%EA%B0%84%EC%9D%98_%EB%B2%95%EC%B9%99
+#### ![image](https://github.com/user-attachments/assets/1580d017-837b-4699-bea7-ff98984194ff)
+### <br/><br/><br/>
+
+
 ## 칩(게이트) 설계 시 최적화 방법
 ### nand 게이트로 다른 기초 논리 게이트를 다 만들 수 있다. 그런데 논리 회로를 어떻게 짜느냐에 따라 게이트 수가 달라진다. 
 ### 가장 좋은 방법은 최대한 nand를 사용하는 것이다. 
