@@ -52,9 +52,23 @@
 
 ## 카르노맵
 ### 논리 함수식을 간소화할 수 있는 방법인데, 블로그, 유튜브 영상들이 많다. 몇 개 참고하자.
+### 카르노맵은 변수 4개 이하에서만 유효하다.
 - https://krakens.tistory.com/100
 - https://twojun-space.tistory.com/54#google_vignette
 - https://www.youtube.com/watch?v=IsMRUf_3m6U
+### <br/>
+
+### 카르노 맵을 그려주는 사이트가 있다.
+#### https://www.boolean-algebra.com/kmap
+### <br/>
+
+### 아래 그럼 보면 AB 칸 순서가 00, 01, 11, 10으로 되어 있다. 이 순서를 반드시 지켜주어야 한다. 
+### 00, 01, 10, 11로 바꿔서 해봤는데 간소화 식이 일치하지 않는다.
+#### ![image](https://github.com/user-attachments/assets/94bbd634-37b3-41cb-9122-82d4009bc1d0)
+### <br/>
+
+### 예를 들어서 멀티플렉서 구현을 할 때에 오른쪽과 같이 넣어주어야 간소화가 진행 되고, 왼쪽과 같이 하면 식이 안 맞는다(테스트도 실패함).
+#### ![image](https://github.com/user-attachments/assets/df6513b0-f54d-4e13-94a0-5e086a4eab2a)
 ### <br/><br/><br/>
 
 ## 논리 기호
