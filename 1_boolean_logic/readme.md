@@ -147,14 +147,14 @@
 ### <br/>
 
 ### 위 비용을 계산하기 위해 먼저 소항이 minterm을 커버하는 것을 보여주는 매트릭스를 그려야 한다.
+### 패트릭 방법은 아래 내용을 참고하면 좋겠다. 간단하게 설명하자면, 소항에서 커버하는 minterm의 개수가 최소인 것을 고르는 것이다.
 ### m이 minterm, P가 소항이라고 보면 된다.
 #### ![image](https://github.com/user-attachments/assets/bc72eadc-2650-43f4-af25-4cb789f4973d)
 #### ![image](https://github.com/user-attachments/assets/8487fc50-dbfd-4874-9e83-e89f41c5e9ab)
 #### ![image](https://github.com/user-attachments/assets/4c4051ef-3e65-4b45-b5c3-eb164e105d0c)
 #### ![image](https://github.com/user-attachments/assets/6131e70e-cdc4-445c-be5a-44d1d6466c95)
 #### ![image](https://github.com/user-attachments/assets/a8bdd34b-8e5c-4cd0-94f0-c365e29b38ac)
-
-
+#### ![image](https://github.com/user-attachments/assets/a3e4b9e6-6b50-4134-a53a-7fae8dc469ec)
 
 ## 실행
 ### 하드웨어 시뮬레이터에서 칩과 테스트 스크립트를 로드하고 >> 버튼을 누르면 된다. 그러면 output-file Not.out 이라고 써진 부분과 같이 스크립트 폴더 내에 만들어진다.
