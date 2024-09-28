@@ -150,7 +150,6 @@
 ### m이 minterm, P가 소항이라고 보면 된다.
 #### ![image](https://github.com/user-attachments/assets/bc72eadc-2650-43f4-af25-4cb789f4973d)
 #### ![image](https://github.com/user-attachments/assets/8487fc50-dbfd-4874-9e83-e89f41c5e9ab)
-#### ![image](https://github.com/user-attachments/assets/bd0453f9-1e1e-4a98-ba3b-ab7c484c87d5)
 #### ![image](https://github.com/user-attachments/assets/4c4051ef-3e65-4b45-b5c3-eb164e105d0c)
 #### ![image](https://github.com/user-attachments/assets/6131e70e-cdc4-445c-be5a-44d1d6466c95)
 #### ![image](https://github.com/user-attachments/assets/a8bdd34b-8e5c-4cd0-94f0-c365e29b38ac)
@@ -160,4 +159,4 @@
 ## 실행
 ### 하드웨어 시뮬레이터에서 칩과 테스트 스크립트를 로드하고 >> 버튼을 누르면 된다. 그러면 output-file Not.out 이라고 써진 부분과 같이 스크립트 폴더 내에 만들어진다.
 #### ![image](https://github.com/user-attachments/assets/48c33a9f-770f-4fa6-9802-2188103ff41f)
-
+#### ![image](https://github.com/user-attachments/assets/bd0453f9-1e1e-4a98-ba3b-ab7c484c87d5)
