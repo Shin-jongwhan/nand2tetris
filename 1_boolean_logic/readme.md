@@ -40,7 +40,11 @@
 
 ## 부울 대수 법칙
 ### 부울 대수 법칙과 카르노맵을 알면 논리 함수를 간소화할 수 있다.
-#### ![image](https://github.com/user-attachments/assets/cda8d5c6-444b-456f-818f-59afb411e113)
+#### ![image](https://github.com/user-attachments/assets/3a824a6b-e293-4a2a-b097-0db569abbf2a)
+### <br/>
+
+### 다중 부정이 헷갈리게 써져 있는데, A`` = A로, 이중 부정(``)은 제거해도 된다는 뜻이다.
+### 그런데 A` = A는 아님(왜 저렇게 써져 있는지는 모르겠음)
 ### <br/><br/><br/>
 
 ## 논리 기호
