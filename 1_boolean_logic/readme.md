@@ -155,6 +155,8 @@
 #### ![image](https://github.com/user-attachments/assets/6131e70e-cdc4-445c-be5a-44d1d6466c95)
 #### ![image](https://github.com/user-attachments/assets/a8bdd34b-8e5c-4cd0-94f0-c365e29b38ac)
 #### ![image](https://github.com/user-attachments/assets/a3e4b9e6-6b50-4134-a53a-7fae8dc469ec)
+### <br/><br/><br/>
+
 
 ## 실행
 ### 하드웨어 시뮬레이터에서 칩과 테스트 스크립트를 로드하고 >> 버튼을 누르면 된다. 그러면 output-file Not.out 이라고 써진 부분과 같이 스크립트 폴더 내에 만들어진다.
