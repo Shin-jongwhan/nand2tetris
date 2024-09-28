@@ -75,6 +75,14 @@
 ### 논리 함수를 구현하는 방법이 어차피 노가다이다. 
 ### 변수가 많아지면 어떻게 하지?
 ### 최소 함수를 구하는 걸 직접 개발할까 하다가... 계속 찾아보니 다양한 것들이 이미 있었다.
+### <br/>
+
+### minterm, 소항 또는 주항(prime implicants), 필수 소항(essential prime implicants), 최종 소항(final implicants)라는 개념을 알아야 한다.
+### <br/>
+
+### minterm은 간단하다. 참이 출력되는 항을 나타낸 집합이다.
+### 예를 들어 멀티플렉서는 입력 A, B, S (selector)가 있을때 참이 100, 011, 110, 111에 나타나 있다.
+#### ![image](https://github.com/user-attachments/assets/67b18f9f-5e1b-4b13-a217-6309bdfb6a35)
 ### <br/><br/><br/>
 
 ## 논리 기호
