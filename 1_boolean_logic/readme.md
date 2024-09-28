@@ -47,6 +47,13 @@
 ### 그런데 A` = A는 아님(왜 저렇게 써져 있는지는 모르겠음)
 ### <br/><br/><br/>
 
+## 카르노맵
+### 논리 함수식을 간소화할 수 있는 방법인데, 블로그, 유튜브 영상들이 많다. 몇 개 참고하자.
+- https://krakens.tistory.com/100
+- https://twojun-space.tistory.com/54#google_vignette
+- https://www.youtube.com/watch?v=IsMRUf_3m6U
+### <br/><br/><br/>
+
 ## 논리 기호
 ### 논리 기호는 집합과 연관이 되어 있어 집합으로 표현이 가능하다.
 ### 책에서도 논리 기호를 쓰니 알아두면 좋다.
