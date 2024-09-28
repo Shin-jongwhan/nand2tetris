@@ -79,3 +79,9 @@
 - nand(nand(a, b), nand(a, b)) : nand 게이트 3개
 ### 위와 같이 어떻게 칩을 설계하느냐에 따라 nand 게이트 수가 달라진다.
 ### <br/><br/><br/>
+
+## 실행
+### 하드웨어 시뮬레이터에서 칩과 테스트 스크립트를 로드하고 >> 버튼을 누르면 된다. 그러면 output-file Not.out 이라고 써진 부분과 같이 스크립트 폴더 내에 만들어진다.
+#### ![image](https://github.com/user-attachments/assets/48c33a9f-770f-4fa6-9802-2188103ff41f)
+#### ![image](https://github.com/user-attachments/assets/bd0453f9-1e1e-4a98-ba3b-ab7c484c87d5)
+
