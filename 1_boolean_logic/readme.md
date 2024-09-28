@@ -17,7 +17,12 @@
 ### <br/><br/><br/>
 
 ## 과제
+### nand2tetris/projects/1 폴더에 있는 hdl 파일을 모두 작성해야 한다.
+#### ![image](https://github.com/user-attachments/assets/7d161bd9-e23f-4ed6-b8d9-1db92bc07b8a)
+### <br/>
+
 ### nand 게이트로 nand 게이트를 제외한 15개의 게이트에 대해 구현해야 한다. 
+### 폴더에는 빠진 게이트도 있는데, 아마 나중에 필요해지면 구현해야 하지 않을까 생각이 든다. 아니면 구현하고 진행하는 것도 나쁘지 않을 듯.
 #### ![image](https://github.com/user-attachments/assets/3a14eb60-36a3-43c2-b6b5-b6d808530278)
 ### <br/>
 
