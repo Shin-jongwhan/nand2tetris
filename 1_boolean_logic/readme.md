@@ -74,9 +74,9 @@
 ## 논리 기호
 ### 논리 기호는 집합과 연관이 되어 있어 집합으로 표현이 가능하다.
 ### 책에서도 논리 기호를 쓰니 알아두면 좋다.
-- 논리합 ∨
-- 논리곱 ∧
-- 부정 ¬
+- 논리합 ∨ : Or과 같음
+- 논리곱 ∧ : And와 같음
+- 부정 ¬ : Not과 같음
 #### https://ko.wikipedia.org/wiki/%EB%93%9C_%EB%AA%A8%EB%A5%B4%EA%B0%84%EC%9D%98_%EB%B2%95%EC%B9%99
 #### ![image](https://github.com/user-attachments/assets/1580d017-837b-4699-bea7-ff98984194ff)
 ### <br/><br/><br/>
