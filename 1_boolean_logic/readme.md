@@ -27,6 +27,12 @@
 - \[칩 이름\].cmp : 테스트 스크립트의 output을 기록한 파일
 ### <br/><br/><br/>
 
+## 논리 회로
+### 논리 회로의 기호로 표현하는 것이 많기 때문에 알아두어야 한다.
+#### https://ko.wikipedia.org/wiki/%EB%85%BC%EB%A6%AC_%ED%9A%8C%EB%A1%9C
+#### ![image](https://github.com/user-attachments/assets/2900eb7c-a767-469b-ae07-4a24b78fbf94)
+### <br/><br/><br/>
+
 ## 칩(게이트) 설계 시 최적화 방법
 ### nand 게이트로 다른 기초 논리 게이트를 다 만들 수 있다. 그런데 논리 회로를 어떻게 짜느냐에 따라 게이트 수가 달라진다. 
 ### 가장 좋은 방법은 최대한 nand를 사용하는 것이다. 
