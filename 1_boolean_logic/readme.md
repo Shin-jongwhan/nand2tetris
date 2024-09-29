@@ -177,3 +177,17 @@
 7. DMux -> DMux4Way -> DMux8Way
 ### <br/><br/><br/>
 
+## 참고 깃허브
+### 내가 만든 것이 최적으로 잘 만들어진 것인지 판단이 안 설 때는 더 짧은 게 있는지 찾아보는 것도 좋다.
+### 개인적으로는 여기가 제일 짧고 깔끔하게 만들었다.
+#### https://github.com/xctom/Nand2Tetris/tree/master
+### <br/>
+
+### 다른 곳도 참고
+#### https://github.com/simulacre7/nand2tetris
+### <br/>
+
+### 여기는 다 풀어서 썼다. 좀 지저분함. 그런데 아마 제일 오래 되서 github 스타는 제일 많다.
+#### https://github.com/havivha/Nand2Tetris/tree/master
+### <br/><br/><br/>
+
