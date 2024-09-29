@@ -162,3 +162,18 @@
 ### 하드웨어 시뮬레이터에서 칩과 테스트 스크립트를 로드하고 >> 버튼을 누르면 된다. 그러면 output-file Not.out 이라고 써진 부분과 같이 스크립트 폴더 내에 만들어진다.
 #### ![image](https://github.com/user-attachments/assets/48c33a9f-770f-4fa6-9802-2188103ff41f)
 #### ![image](https://github.com/user-attachments/assets/bd0453f9-1e1e-4a98-ba3b-ab7c484c87d5)
+### <br/><br/><br/>
+
+## 팁
+### 총 15개의 hdl로 쓰여진 논리 회로가 있는데 다음의 순서로 진행한다.
+### 1 ~ 3번은 이 순서로 진행, 6, 7번은 화살표 순서대로 진행해야 좋다. 왜냐면 서로 연관 되어 있다.
+### 나머지는 자유롭게 진행해도 좋다.
+1. Not
+2. Or, And
+3. Xor
+4. Not, Or, And 16비트
+5. Or8Way
+6. Mux -> Mux16 -> Mux4Way16 -> Mux8Way16
+7. DMux -> DMux4Way -> DMux8Way
+### <br/><br/><br/>
+
