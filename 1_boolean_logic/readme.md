@@ -191,3 +191,48 @@
 #### https://github.com/havivha/Nand2Tetris/tree/master
 ### <br/><br/><br/>
 
+## 더 빠른 방법(부록 2 내용)
+### 사실 하드웨어 시뮬레이터는 구현을 하지 않아도 돌아가도록 설계 되어 있다. 이 시뮬레이터는 범용으로 쓰여지게 하기 위해 만들어졌다.
+### 하드웨어 시뮬레이터는 java로 만들어졌다. jar 안에 있는 .class 파일이 있는데, 이걸 쓰는 것이 .hdl을 호출해서 쓰는 것보다 훨씬 빠르다.
+### <br/>
+
+### Not.hdl을 구현하려고 처음에 열면 이렇게 되어 있을 것이다.
+### 여기서 PARTS 안에 Nand 게이트로 Not을 구현한다.
+```
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/1/Not.hdl
+/**
+ * Not gate:
+ * if (in) out = 0, else out = 1
+ */
+CHIP Not {
+    IN in;
+    OUT out;
+
+    PARTS:
+    Nand(a=in, b=in, out=out);
+}
+
+```
+### <br/>
+
+### 그런데 이렇게 해도 된다.
+```
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/1/Not.hdl
+/**
+ * Not gate:
+ * if (in) out = 0, else out = 1
+ */
+CHIP Not {
+    IN in;
+    OUT out;
+    BUILTIN Not;
+}
+
+```
+### <br/><br/><br/>
