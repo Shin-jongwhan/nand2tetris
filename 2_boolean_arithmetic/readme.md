@@ -114,3 +114,46 @@ CHIP NotaAndb {
     And(a=na, b=b, out=out);
 }
 ```
+### <br/><br/>
+
+### zx 구현에 앞서... 
+### x는 16 비트이고 zx는 1 비트인데, 어떻게 16비트 칩에 넣을 수 있는가다. 
+### 방법은 2가지인데 하나는 코드는 깔끔하지 않지만 효율적인 연산을 하고, 하나는 칩 코드가 깔끔하지만 비효율적인 것이다.
+### <br/>
+
+### 첫 번째 방법은 다음과 같이 하나씩 적어주는 것이다. 이는 코드는 길어지지만 속도가 더 빠르다(효율적임).
+```
+/**
+ * 16-bit 1 bit NotaAndb gate:
+ * for i = 0, ..., 15:
+ * if (a[i] == 0 and b == 1) out[i] = 1 else out[i] = 0
+ */
+CHIP NotaAndb16Abit {
+    IN a[16], b;
+    OUT out[16];
+
+    PARTS:
+    Not16(in[0]=b, in[1]=b, in[2]=b, in[3]=b, in[4]=b, 
+    in[5]=b, in[6]=b, in[7]=b, in[8]=b, in[9]=b, in[10]=b, 
+    in[11]=b, in[12]=b, in[13]=b, in[14]=b, in[15]=b, out=nb);
+    And16(a=a, b=nb, out=out);
+}
+```
+### <br/>
+
+### 두 번째 방법은 Mux를 사용하는 것이다.
+### 이 방식은 코드가 간결하지만, 내부적으로 더 많은 연산을 필요로 하므로 속도가 느려질 수 있다. 또한, 논리적인 자원도 더 많이 소모될 가능성이 있다.
+```
+/**
+ * 16-bit 1 bit NotaAndb gate:
+ * for i = 0, ..., 15:
+ * if (a[i] == 0 and b == 1) out[i] = 1 else out[i] = 0
+ */
+CHIP NotaAndb16Abit {
+    IN a[16], b;
+    OUT out[16];
+
+    PARTS:
+    Mux16(a=x,b=false,sel=zx,out=zxout);
+}
+```
