@@ -85,3 +85,32 @@ PARTS:
 ```
 ### <br/><br/><br/>
 
+## ALU
+### ALU는 조건을 zx, nx, zy, ny, f, no 하나씩 순서대로 풀어가야 한다.
+### <br/><br/>
+
+### `zx`
+### 먼저 zx는 불 함수에서 다음과 같다. a = zx, b = x가 들어가면 된다. 그 반대로 생각하고 만들어도(NotbAnda 게이트) 상관 없다.
+| a | b |out|
+|---|---|---|
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 0 |
+| 1 | 1 | 0 |
+### <br/>
+
+### 이는 이렇게 풀 수 있다.
+```
+/**
+ * NotaAndb gate:
+ * if (a == 0 and b == 1) out = 1 else out = 0
+ */
+CHIP NotaAndb {
+    IN a, b;
+    OUT out;
+    
+    PARTS:
+    Not(in=a, out=na);
+    And(a=na, b=b, out=out);
+}
+```
