@@ -43,7 +43,7 @@
 ### <br/><br/><br/>
 
 ## Inc16
-### 처음에는 이렇게 했다.
+### 아래와 같이 작성했다.
 ```
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
@@ -78,11 +78,71 @@ CHIP Inc16 {
 ```
 ### <br/>
 
-### 그런데 다른 걸 찾아보니 true, false라는 게 있었다. true는 1, false는 0을 나타낸다.
+### 다른 걸 찾아보니 true, false라는 게 있었다. true는 1, false는 0을 나타낸다.
+### 아래와 같이 하면 Incrementor를 별도로 작성하는 의미가 없어진다. 또한 위의 칩 로직과 비교해볼 때 성능 상 떨어진다(논리 회로가 더 많음).
 ```
 PARTS:
     Add16(a=in,b[0]=true,b[1..15]=false,out=out);
 ```
+### <br/>
+
+### PARTS 부분을 한 단계 더 풀어쓰면 이렇게 된다. FullAdder는 캐리 전파 지연이 3배나 된다.
+#### * 그냥 단순히 회로 개수를 비교하기 위해 풀어쓴 것으로 carry 번호는 무시한다.
+```
+HalfAdder(a=a[0], b=b[0], sum=out[0], carry=carry1);
+HalfAdder(a=a, b=b, sum=sum1, carry=carry1);
+    HalfAdder(a=c, b=sum1, sum=sum, carry=carry2);
+    Xor(a=carry1, b=carry2, out=carry);
+HalfAdder(a=a, b=b, sum=sum1, carry=carry1);
+    HalfAdder(a=c, b=sum1, sum=sum, carry=carry2);
+    Xor(a=carry1, b=carry2, out=carry);
+HalfAdder(a=a, b=b, sum=sum1, carry=carry1);
+    HalfAdder(a=c, b=sum1, sum=sum, carry=carry2);
+    Xor(a=carry1, b=carry2, out=carry);
+HalfAdder(a=a, b=b, sum=sum1, carry=carry1);
+    HalfAdder(a=c, b=sum1, sum=sum, carry=carry2);
+    Xor(a=carry1, b=carry2, out=carry); 
+HalfAdder(a=a, b=b, sum=sum1, carry=carry1);
+    HalfAdder(a=c, b=sum1, sum=sum, carry=carry2);
+    Xor(a=carry1, b=carry2, out=carry);
+HalfAdder(a=a, b=b, sum=sum1, carry=carry1);
+    HalfAdder(a=c, b=sum1, sum=sum, carry=carry2);
+    Xor(a=carry1, b=carry2, out=carry);
+HalfAdder(a=a, b=b, sum=sum1, carry=carry1);
+    HalfAdder(a=c, b=sum1, sum=sum, carry=carry2);
+    Xor(a=carry1, b=carry2, out=carry);
+HalfAdder(a=a, b=b, sum=sum1, carry=carry1);
+    HalfAdder(a=c, b=sum1, sum=sum, carry=carry2);
+    Xor(a=carry1, b=carry2, out=carry); 
+HalfAdder(a=a, b=b, sum=sum1, carry=carry1);
+    HalfAdder(a=c, b=sum1, sum=sum, carry=carry2);
+    Xor(a=carry1, b=carry2, out=carry);
+HalfAdder(a=a, b=b, sum=sum1, carry=carry1);
+    HalfAdder(a=c, b=sum1, sum=sum, carry=carry2);
+    Xor(a=carry1, b=carry2, out=carry);
+HalfAdder(a=a, b=b, sum=sum1, carry=carry1);
+    HalfAdder(a=c, b=sum1, sum=sum, carry=carry2);
+    Xor(a=carry1, b=carry2, out=carry);
+HalfAdder(a=a, b=b, sum=sum1, carry=carry1);
+    HalfAdder(a=c, b=sum1, sum=sum, carry=carry2);
+    Xor(a=carry1, b=carry2, out=carry); 
+HalfAdder(a=a, b=b, sum=sum1, carry=carry1);
+    HalfAdder(a=c, b=sum1, sum=sum, carry=carry2);
+    Xor(a=carry1, b=carry2, out=carry);
+HalfAdder(a=a, b=b, sum=sum1, carry=carry1);
+    HalfAdder(a=c, b=sum1, sum=sum, carry=carry2);
+    Xor(a=carry1, b=carry2, out=carry);
+HalfAdder(a=a, b=b, sum=sum1, carry=carry1);
+    HalfAdder(a=c, b=sum1, sum=sum, carry=carry2);
+    Xor(a=carry1, b=carry2, out=carry);
+}
+```
+### <br/><br/>
+
+### 여기서 생각해볼 거리가 있다.
+### 먼저 첫 번째 방법으로 하면 코드는 길어지지만 속도는 올라간다. 
+### 두 번째 방법으로 하면 효율성은 희생하지만 가독성이 증가하고 유지보수가 쉬워진다.
+### 효율성을 좀 더 개선하기 위해 보편적으로 자리올림수 예측(carry lookahead adder, CLA)을 쓴다고 한다. 
 ### <br/><br/><br/>
 
 ## ALU
