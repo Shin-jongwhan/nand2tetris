@@ -150,11 +150,12 @@ HalfAdder(a=a, b=b, sum=sum1, carry=carry1);
 ### 시간복잡도는 O(log16) = O(4)이다.
 ### <br/><br/><br/>
 
-## ALU
+
+# ALU
 ### ALU는 조건을 zx, nx, zy, ny, f, no 하나씩 순서대로 풀어가야 한다.
 ### <br/><br/>
 
-### `zx, zy`
+## zx, zy
 ### 먼저 zx는 불 함수에서 다음과 같다. a = zx, b = x가 들어가면 된다. 그 반대로 생각하고 만들어도(NotbAnda 게이트) 상관 없다.
 | a | b |out|
 |---|---|---|
@@ -179,9 +180,9 @@ CHIP NotaAndb {
     And(a=na, b=b, out=out);
 }
 ```
-### <br/><br/>
+### <br/><br/><br/>
 
-### zx 구현에 앞서... 
+## zx 구현에 앞서... 
 ### x는 16 비트이고 zx는 1 비트인데, 어떻게 16비트 칩에 넣을 수 있는가다. 
 ### 방법은 2가지인데 하나는 코드는 깔끔하지 않지만 효율적인 연산을 하고, 하나는 칩 코드가 깔끔하지만 비효율적인 것이다.
 ### <br/>
@@ -212,6 +213,7 @@ CHIP NotaAndb16Abit {
 ```
 Xor16Abit(a=x1, b=nx, out=x2);
 ```
+### <br/><br/>
 
 ### 두 번째 방법은 Mux를 사용하는 것이다.
 ### 이 방식은 코드가 간결하지만, 내부적으로 더 많은 연산을 필요로 하므로 속도가 느려질 수 있다. 또한, 논리적인 자원도 더 많이 소모될 가능성이 있다.
@@ -229,9 +231,10 @@ CHIP NotaAndb16Abit {
     Mux16(a=x,b=false,sel=zx,out=zxout);
 }
 ```
-### <br/><br/>
+### <br/><br/><br/>
 
-### `nx, ny`
+
+## nx, ny
 ### 조건은 zx == 1이면 x = !x이다. 이에 대한 진리표는 Xor과 같다.
 | nx | x | out |
 |----|---|-----|
@@ -250,19 +253,20 @@ Not16(in=zyout,out=noty);
 Mux16(a=zxout,b=notx,sel=nx,out=nxout); 
 Mux16(a=zyout,b=noty,sel=ny,out=nyout);
 ```
-### <br/><br/>
+### <br/><br/><br/>
 
-### `f`
+
+## f
 ### f는 Add16 또는 And16를 선택하는 문제다.
 ```
 Add16(a=x2, b=y2, out=addxy);
 And16(a=x2, b=y2, out=andxy);
 Mux16(a=andxy, b=addxy, sel=f, out=outf);
 ```
-### <br/><br/>
+### <br/><br/><br/>
 
 
-### `no, ng`
+## no, ng
 ### no는 nx, xy와 같은 로직이다. Xor 게이트 쓰거나 Not + Mux를 쓴다.
 ### ng는 맨 마지막(\[15\]) 비트가 0이면 양수, 1이면 음수이다. 그러므로 똑같이 가면 되서 같은 칩에서 output을 출력할 수 있다.
 ### outlow, outhigh는 내장칩에 Or16Way 있었으면 좋겠는데 없고 Or8Way만 있어서 8비트로 나눈 것이다.
@@ -271,9 +275,10 @@ Xor16(a[0]=no, a[1]=no, a[2]=no, a[3]=no, a[4]=no, a[5]=no, a[6]=no, a[7]=no,
 a[8]=no, a[9]=no, a[10]=no, a[11]=no, a[12]=no, a[13]=no, a[14]=no, a[15]=no, 
 b=outf, out=out, out[0..7]=outlow, out[8..15]=outhigh, out[15]=ng);
 ```
-### <br/><br/>
+### <br/><br/><br/>
 
-### `zr`
+
+## zr
 ### 모든 비트에서 1이 하나라도 있으면 0이 된다. 그러므로 Or8Way를 이용한다(Or16Way를 개발해서 사용해도 좋다).
 ### 모두 0이면 0이 출력되므로 Not 게이트로 반전시킨다.
 ```
@@ -282,10 +287,11 @@ Or8Way(in=outhigh, out=outhigh2);
 Or(a=outlow2, b=outhigh2, out=nzr);
 Not(in=nzr, out=zr);
 ```
-### <br/><br/>
+### <br/><br/><br/>
+
 
 ## ALU 정리
-### 일부 없는 게이트는 직접 만들었다. 내장형 칩으로 구현할 수 있는 것은 코드가 길어지더라도 내장형 칩을 사용하였다.
+### 일부 없는 게이트(Xor16, Xor16Abit)는 직접 만들었다. 내장형 칩으로 구현할 수 있는 것은 코드가 길어지더라도 내장형 칩을 사용하였다.
 
 ### <br/><br/>
 ### hdl
