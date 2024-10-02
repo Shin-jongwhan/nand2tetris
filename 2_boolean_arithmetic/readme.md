@@ -334,12 +334,8 @@ CHIP ALU {
         And16(a=y, b=nzy, out=y1);
 
         //nx, ny
-        Xor16(a[0]=nx, a[1]=nx, a[2]=nx, a[3]=nx, a[4]=nx, a[5]=nx, a[6]=nx, a[7]=nx, 
-            a[8]=nx, a[9]=nx, a[10]=nx, a[11]=nx, a[12]=nx, a[13]=nx, a[14]=nx, a[15]=nx, 
-            b=x1, out=x2);
-        Xor16(a[0]=ny, a[1]=ny, a[2]=ny, a[3]=ny, a[4]=ny, a[5]=ny, a[6]=ny, a[7]=ny, 
-            a[8]=ny, a[9]=ny, a[10]=ny, a[11]=ny, a[12]=ny, a[13]=ny, a[14]=ny, a[15]=ny,
-            b=y1, out=y2);
+        Xor16Abit(a=x1, b=nx, out=x2);
+        Xor16Abit(a=y1, b=ny, out=y2);
         //Or you can implement this function using not and mux 
         //Not16(in=x1,out=nx1);
         //Not16(in=y1,out=ny1);
@@ -352,9 +348,7 @@ CHIP ALU {
         Mux16(a=andxy, b=addxy, sel=f, out=outf);
 
         //no, ng
-        Xor16(a[0]=no, a[1]=no, a[2]=no, a[3]=no, a[4]=no, a[5]=no, a[6]=no, a[7]=no, 
-        a[8]=no, a[9]=no, a[10]=no, a[11]=no, a[12]=no, a[13]=no, a[14]=no, a[15]=no, 
-        b=outf, out=out, out[0..7]=outlow, out[8..15]=outhigh, out[15]=ng);
+        Xor16Abit(a=outf, b=no, out=out, out[0..7]=outlow, out[8..15]=outhigh, out[15]=ng);
         //Or you can implement this function using not and mux
         //Not16(in=outf, out=noutf);
         //Mux16(a=outf, b=noutf, sel=no, out=out, out[0..7]=outlow, out[8..15]=outhigh, out[15]=ng);
