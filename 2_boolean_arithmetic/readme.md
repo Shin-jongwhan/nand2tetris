@@ -154,7 +154,7 @@ HalfAdder(a=a, b=b, sum=sum1, carry=carry1);
 ### ALU는 조건을 zx, nx, zy, ny, f, no 하나씩 순서대로 풀어가야 한다.
 ### <br/><br/>
 
-### `zx`
+### `zx, zy`
 ### 먼저 zx는 불 함수에서 다음과 같다. a = zx, b = x가 들어가면 된다. 그 반대로 생각하고 만들어도(NotbAnda 게이트) 상관 없다.
 | a | b |out|
 |---|---|---|
@@ -222,3 +222,26 @@ CHIP NotaAndb16Abit {
     Mux16(a=x,b=false,sel=zx,out=zxout);
 }
 ```
+### <br/><br/>
+
+### `nx, ny`
+### 조건은 zx == 1이면 x = !x이다. 이에 대한 진리표는 Xor과 같다.
+| nx | x | out |
+|----|---|-----|
+| 0  | 0 | 0   |
+| 0  | 1 | 1   |
+| 1  | 0 | 1   |
+| 1  | 1 | 0   |
+### <br/>
+
+### 그런데 문제는 내장칩에 Xor16 게이트가 없다는 것이다. 
+### 다른 깃허브 찾아보면 내장칩으로 구현하기 위해 Not16, Mux16 게이트로 만들었는데 비효율적인 설계이다.
+#### * 이런 것 생각해보면 추상화와 구현 패러다임 / 구현과 효율성을 생각해보면 나는 구현과 동시에 효율성을 같이 생각하고 있다.
+```
+Not16(in=zxout,out=notx);
+Not16(in=zyout,out=noty);
+Mux16(a=zxout,b=notx,sel=nx,out=nxout); 
+Mux16(a=zyout,b=noty,sel=ny,out=nyout);
+```
+### <br/>
+
