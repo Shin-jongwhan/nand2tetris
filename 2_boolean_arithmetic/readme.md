@@ -278,6 +278,9 @@ Not(in=nzr, out=zr);
 ### <br/><br/>
 
 ## ALU 정리
+### 일부 없는 게이트는 직접 만들었다. 내장형 칩으로 구현할 수 있는 것은 코드가 길어지더라도 내장형 칩을 사용하였다.
+
+### <br/><br/>
 ### hdl
 ```
 // This file is part of www.nand2tetris.org
