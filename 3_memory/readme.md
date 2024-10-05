@@ -22,6 +22,7 @@
 ### 그런데 이렇게 해서 만들면 의문이 생긴다. 최초 실행 시에는 어떻게 Mux 다음에 있는 DFF의 output인 out0를 받아올 수 있는 걸까?
 ### 책에는 별도로 설명 되어 있지 않지만 추측으로는, 한 칩 내에서 같은 output name을 가져와서, 있으면 그 값을, 없으면 false로 하는 것 같다.
 ### 칩에는 없는 아예 다른 이름으로 해보면 에러가 난다. 다만, 칩에서 명시한 output 이름으로 하면 에러가 나지 않는다.
+### 이에 대한 것은 아래에 자세히 설명한다.
 ```
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
@@ -43,3 +44,18 @@ CHIP Bit {
 }
 
 ```
+### <br/><br/>
+
+## 조합 칩(Combinational chip) 과 순차 칩(Sequencial chip)
+### 조합 칩은 시간 독립적 칩(time-independent chip)이라고도 한다.
+### 순차 칩은 클록 칩(clocked chip)이라고도 한다.
+### DFF는 순차 칩이다. 시간에 의존성이 있고, 시간 지연이 발생한다.
+#### * 참고로 번역기에서 시간 의존성 칩의 영어 명칭이 time-independent chip인데 잘못 번역이 된 듯 하다. 시간 독립적 칩이 맞다.
+### <br/>
+
+### 부록 2에 보면 순차 칩인 DFF는 재귀적으로 어딘가 클록화된 핀이 있는지 검사하고 있으면 루프를 허용한다고 한다.
+### 이를 피드백 루프라고 한다.
+### 그래서 out을 별도로 사용할 수 있게 한다. 
+### 이는 데이터 경쟁(data competition)을 방지하기 위한 조치이다(동시에 들어간 두 데이터 간 경쟁으로 잘못된 출력이 나오는 현상).
+### <br/><br/><br/>
+
