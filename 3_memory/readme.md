@@ -17,3 +17,29 @@
 
 ### <br/><br/><br/>
 
+## bit.hdl
+### 가장 먼저 1비트 레지스터를 구현해야 하는데 혹시 이렇게 하면 될까 하면... 그게 맞다. 만들어진다.
+### 그런데 이렇게 해서 만들면 의문이 생긴다. 최초 실행 시에는 어떻게 Mux 다음에 있는 DFF의 output인 out0를 받아올 수 있는 걸까?
+### 책에는 별도로 설명 되어 있지 않지만 추측으로는, 한 칩 내에서 같은 output name을 가져와서, 있으면 그 값을, 없으면 false로 하는 것 같다.
+### 칩에는 없는 아예 다른 이름으로 해보면 에러가 난다. 다만, 칩에서 명시한 output 이름으로 하면 에러가 나지 않는다.
+```
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/3/a/Bit.hdl
+/**
+ * 1-bit register:
+ * If load is asserted, the register's value is set to in;
+ * Otherwise, the register maintains its current value:
+ * if (load(t)) out(t+1) = in(t), else out(t+1) = out(t)
+ */
+CHIP Bit {
+    IN in, load;
+    OUT out;
+
+    PARTS:
+    Mux(a=out0, b=in, sel=load, out=out1);
+    DFF(in=out1, out=out, out=out0);
+}
+
+```
