@@ -31,7 +31,7 @@
 ### 먼저 어셈블리어의 위키피디아의 이야기를 들어보자. 
 ### 어셈블리어를 '거의' 기계어로 취급한다. 하지만 어셈블리어는 기계어보다 더 고수준의 언어이다.
 ### 기계어는 오히려 '0과 1의 규칙성으로 기호를 표현'한 것과 같은 것이다. 그리고 기초 논리 게이트 또한 기계어이다.
-#### ![image](https://github.com/user-attachments/assets/66b91cea-0f69-4a03-98e3-b8e70280fcdc){: width="50" height="50"}
+#### ![image](https://github.com/user-attachments/assets/66b91cea-0f69-4a03-98e3-b8e70280fcdc){: width="50%" height="50%"}
 ### <br/>
 
 ### 어셈블리어는 기계어와 가장 직접적으로 연관이 있는 언어이다. 
