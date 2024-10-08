@@ -57,7 +57,7 @@
 ### 분리해보자면, 데이터 메모리는 RAM을 뜻한다. 
 #### ![image](https://github.com/user-attachments/assets/2bc791c8-b44e-458b-b84e-ec1d3431d07d)
 
-<img src="https://github.com/user-attachments/assets/2bc791c8-b44e-458b-b84e-ec1d3431d07d" width="30">
+<img src="https://github.com/user-attachments/assets/2bc791c8-b44e-458b-b84e-ec1d3431d07d" width="50%">
 
 ### <br/><br/><br/>
 
