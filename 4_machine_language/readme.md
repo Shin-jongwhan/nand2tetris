@@ -151,5 +151,10 @@ M=-1
 #### ![image](https://github.com/user-attachments/assets/cf4c6010-c784-44d2-a14f-a5e1aeaefe57)
 ### <br/><br/>
 
-### 그러면 전체 화면을 검은색으로 칠하려먼 어떻게 해야할까?
-###
+### 그러면 전체 화면을 검은색으로 칠하려면 어떻게 해야할까?
+### SCREEN 주소부터 루프를 돌면서 +1씩 주소를 맨 마지막 주소까지 접근하면서 M=-1을 설정하면 된다.
+
+
+https://github.com/user-attachments/assets/eb1e68c0-fe32-4a5f-b430-7296fac22508
+
+
