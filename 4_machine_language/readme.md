@@ -231,3 +231,44 @@ https://github.com/user-attachments/assets/fee4bcf1-3f9d-40d7-98d1-5df8456d475d
 - SCREEN 주솟값은 16384 ~ 24575, KBD 주솟값은 24576
 - A 명령어, C 명령어 규칙
 #### ![image](https://github.com/user-attachments/assets/af576656-6342-4870-ad82-485f9c12a794)
+### <br/><br/><br/>
+
+
+## 과제를 진행하면서 의문이 들 수 있는 점
+### 이런 거는 된다.
+```
+@n
+M=M+1
+
+@n
+M=M-1
+
+@n
+M=-1
+
+@n
+M=1
+
+@n
+M=0
+
+@n
+M=D
+
+@n
+M=A
+```
+### <br/><br/>
+
+### 이런 거는 안 된다.
+```
+@n
+M=32
+
+D=32
+```
+### <br/><br/>
+
+### 왜 안 될까?
+### 제어비트에 해당 연산을 지원하는 항목이 없기 때문이다.
+### <br/><br/><br/>
