@@ -230,3 +230,4 @@ https://github.com/user-attachments/assets/fee4bcf1-3f9d-40d7-98d1-5df8456d475d
 - 변수는 16부터 주소가 바인딩
 - SCREEN 주솟값은 16384 ~ 24575, KBD 주솟값은 24576
 - A 명령어, C 명령어 규칙
+#### ![image](https://github.com/user-attachments/assets/af576656-6342-4870-ad82-485f9c12a794)
